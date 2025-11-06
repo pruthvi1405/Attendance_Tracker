@@ -11,6 +11,10 @@ export const login = async (username, password) => {
   return axiosInstance.post("/auth/login", { username, password });
 };
 
+export const signup = async (payload) => {
+  return axiosInstance.post("/create_user", payload); 
+};
+
 // api/punch.js
 export const punchIn = async (token, username = null, when = null) => {
   const body = {};
