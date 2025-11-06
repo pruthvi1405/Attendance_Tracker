@@ -1,0 +1,105 @@
+.table-container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin-top: 20px;
+  overflow-x: auto;
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Poppins", sans-serif;
+
+    thead {
+      background: #1e1e2f;
+      color: #ffffff;
+
+      th {
+        padding: 12px;
+        font-size: 0.95rem;
+        text-align: left;
+        white-space: nowrap;
+      }
+    }
+
+    tbody {
+      tr {
+        transition: background 0.2s;
+
+        &:nth-child(even) {
+          background: #f8f9fa;
+        }
+
+        &:hover {
+          background: #e9ecef;
+        }
+
+        td {
+          padding: 10px 12px;
+          font-size: 0.9rem;
+          color: #2f3640;
+          vertical-align: top;
+
+          .clickable-username {
+            cursor: pointer;
+            color: #1e90ff;
+            text-decoration: underline;
+
+            &:hover {
+              color: #1c7ed6;
+            }
+          }
+
+          .punch-block {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #77a477; // neutral for empty punches
+            border-radius: 8px;
+            padding: 4px 8px;
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+            color: #2f3640;
+
+            .punch-time {
+              padding: 0 4px;
+              min-width: 50px;
+              text-align: center;
+            }
+
+            .separator {
+              color: #a4b0be;
+              font-weight: bold;
+            }
+
+            &.activePunch {
+              background: #ffe6e6; // red
+              color: #e84118;
+              font-weight: 600;
+            }
+
+            &.hasPunches {
+              background: #d4f8d4; // soft green
+              color: #2f8f2f;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px;
+
+    .table {
+      font-size: 0.85rem;
+
+      th,
+      td {
+        padding: 8px;
+      }
+    }
+  }
+}
